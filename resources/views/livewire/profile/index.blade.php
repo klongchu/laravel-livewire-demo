@@ -8,6 +8,7 @@
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary">ข้อมูลส่วนตัว</h6>
+                    <a href="{{ route('profile.edit', auth()->user()->id) }}" class="btn btn-warning" wire:navigate>แก้ไข</a>
                 </div>
                 <div class="card-body">
                     <table class="table">
