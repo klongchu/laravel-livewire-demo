@@ -37,6 +37,7 @@
                                     Register Account
                                 </button>
                                 <hr>
+                                <a href="{{ route('login')}}" wire:navigate> Login</a>
                             </form>
 
                         </div>
