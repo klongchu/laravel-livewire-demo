@@ -11,17 +11,23 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
-                            <form class="user" wire:submit.prevent="register">
+                            <form class="user" wire:submit.prevent="submit">
                                 <div class="form-group row">
                                     <div class="col-sm-12 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="Name" wire:model="name">
-                                    </div>
+                                        <input type="text" class="form-control form-control-user"
+                                            id="exampleFirstName" placeholder="Name" wire:model.live="name">
 
+                                        @error('name')
+                                            <font color="red">{{ $message }}</font>
+                                        @enderror
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Email Address" wire:model="email">
+                                        placeholder="Email Address" wire:model.live="email">
+                                    @error('email')
+                                        <font color="red">{{ $message }}</font>
+                                    @enderror
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
@@ -30,14 +36,15 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="Repeat Password" wire:model="password_confirmation">
+                                            id="exampleRepeatPassword" placeholder="Repeat Password"
+                                            wire:model="password_confirmation">
                                     </div>
                                 </div>
                                 <button class="btn btn-primary btn-user btn-block" type="submit">
                                     Register Account
                                 </button>
                                 <hr>
-                                <a href="{{ route('login')}}" wire:navigate> Login</a>
+                                <a href="{{ route('login') }}" wire:navigate> Login</a>
                             </form>
 
                         </div>
@@ -48,3 +55,17 @@
 
     </div>
 </div>
+
+@script
+    <script>
+        $wire.on('register-success', () => {
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "ลงทะเบียนสำเร็จ",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        });
+    </script>
+@endscript

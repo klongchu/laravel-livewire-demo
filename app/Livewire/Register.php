@@ -36,7 +36,7 @@ class Register extends Component
         return view('livewire.register');
     }
 
-    public function register()
+    public function submit()
     {
         $this->validate();
 
@@ -47,16 +47,16 @@ class Register extends Component
         ]);
 
         $credentials = [
-            'name' => $this->name,
+            //'name' => $this->name,
             'email' => Str::lower($this->email),
             'password' => Hash::make($this->password),
         ];
 
         //dd($credentials, $V_Person);
-
+        $this->dispatch('register-success');
         Auth::attempt($credentials);
 
-        session()->flash('message', 'You have successfully registered & logged in!');
+        //session()->flash('message', 'You have successfully registered & logged in!');
 
         return $this->redirectRoute('home', navigate: true);
     }

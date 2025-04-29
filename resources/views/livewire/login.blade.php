@@ -54,3 +54,17 @@
 
     </div>
 </div>
+
+@script
+    <script>
+        $wire.on('login-success', () => {
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "เข้าสู่ระบบสำเร็จ",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        });
+    </script>
+@endscript
