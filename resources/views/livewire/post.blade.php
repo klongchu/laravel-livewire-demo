@@ -66,8 +66,8 @@
         <tbody>
             @forelse ($posts as $item)
                 <tr>
-                    <td><img src="{{ $item->photo ? asset('storage/' . $item->photo) : '' }}" width="50"></td>
                     <th scope="row">{{ $item->id }}</th>
+                    <td><img src="{{ $item->photo ? asset('storage/' . $item->photo) : '' }}" width="50"></td>
                     <td>{{ $item->title }}</td>
                     <td>{{ $item->content }}</td>
                     <td>{{ $item->author }}</td>
