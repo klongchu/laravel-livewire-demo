@@ -23,6 +23,55 @@ class PostSeeder extends Seeder {
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            [
+                'title' => 'Second Post',
+                'content' => 'Laravel makes development easy and enjoyable!',
+                'author' => 'John Doe',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'title' => 'Second Post',
+                'content' => 'Laravel makes development easy and enjoyable!',
+                'author' => 'John Doe',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'title' => 'Second Post',
+                'content' => 'Laravel makes development easy and enjoyable!',
+                'author' => 'John Doe',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'title' => 'Second Post',
+                'content' => 'Laravel makes development easy and enjoyable!',
+                'author' => 'John Doe',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'title' => 'Second Post',
+                'content' => 'Laravel makes development easy and enjoyable!',
+                'author' => 'John Doe',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'title' => 'Second Post',
+                'content' => 'Laravel makes development easy and enjoyable!',
+                'author' => 'John Doe',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'title' => 'Second Post',
+                'content' => 'Laravel makes development easy and enjoyable!',
+                'author' => 'John Doe',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
         ]);
     }
 }
