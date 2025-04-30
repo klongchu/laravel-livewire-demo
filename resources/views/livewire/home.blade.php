@@ -1,5 +1,5 @@
 <div>
-    {{-- If you look to others for fulfillment, you will never truly be fulfilled. --}}
-    หน้าแรก
 
+    หน้าแรก
+    <livewire:post />
 </div>
