@@ -17,8 +17,6 @@ class Callback extends Component
             $response = Http::asForm()->post('https://moph.id.th/api/v1/token', [
                 'grant_type' => 'authorization_code',
                 'code' => request()->code,
-                'client_id' => '',
-                'client_secret' => '',
                 'redirect_uri' => route('provider.callback'),
             ]);
 
@@ -26,9 +24,6 @@ class Callback extends Component
             //Provider
 
             $provider = Http::post('https://provider.id.th/api/v1/services/token', [
-                'client_id' => '',
-                'secret_key' => '',
-                'token_by' => "Health ID",
                 'token' => $response->json()['data']['access_token'],
             ]);
 
@@ -42,9 +37,6 @@ secret-key: Secret-Key ที่ได้รับจากระบบ Provider
 
             $profile = Http::withHeaders([
                 'Content-type' => 'application/json',
-                'Authorization' => 'Bearer ' . $provider->json()['data']['access_token'],
-                'client-id' => '',
-                'secret-key' => '',
             ])->get('https://provider.id.th/api/v1/services/profile');
 
             User::create([
