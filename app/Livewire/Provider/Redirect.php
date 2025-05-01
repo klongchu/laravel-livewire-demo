@@ -16,7 +16,6 @@ class Redirect extends Component
     public function mount(){
         $this->redirect_uri = route('provider.callback');
         $this->response_type = "code";
-        $this->url = "https://moph.id.th/oauth/redirect?client_id=".$this->client_id."&redirect_uri=".$this->redirect_uri."&response_type=".$this->response_type;
     }
 
 
