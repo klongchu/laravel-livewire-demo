@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => 'guest'], function () {
     Route::get('/login', App\Livewire\Login::class)->name('login');
     Route::get('/register', App\Livewire\Register::class)->name('register');
-    Route::get('/provider/callback', App\Livewire\Provider\Callback::class)->name('provider.callback');
 });
 
 Route::group(['middleware' => 'auth'], function () {
